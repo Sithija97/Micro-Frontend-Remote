@@ -1,4 +1,3 @@
-import { PORT } from "./src/constants/env";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
@@ -20,7 +19,7 @@ export default defineConfig({
     }),
   ],
   server: {
-    port: Number(PORT), // Your desired port
+    port: 3001, // Your desired port
     strictPort: true, // Exit if port is already in use (optional)
     host: true, // Listen on all addresses (optional)
   },
