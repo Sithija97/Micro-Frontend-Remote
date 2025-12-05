@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import federation from "@originjs/vite-plugin-federation";
+import { PORT } from "./src/constants/env";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -19,7 +20,7 @@ export default defineConfig({
     }),
   ],
   server: {
-    port: 3001, // Your desired port
+    port: Number(PORT), // Your desired port
     strictPort: true, // Exit if port is already in use (optional)
     host: true, // Listen on all addresses (optional)
   },
@@ -30,7 +31,7 @@ export default defineConfig({
     cssCodeSplit: false,
   },
   preview: {
-    port: 3001,
+    port: Number(PORT),
     strictPort: true,
     cors: true,
   },
